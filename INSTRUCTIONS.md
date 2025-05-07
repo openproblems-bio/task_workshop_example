@@ -15,3 +15,12 @@ Show the script and output to demonstrate what we want to do.
 
 - Briefly explain and fill in the sections of the file
 - Skip the test resources as this has already be configured to be the minimum needed for the example
+
+## Complete API files
+
+- Copy the `comp_control_method.yaml` API file and modify it to create `comp_method.yaml` as an example of a component config file
+  - Remove the `--input-solution` argument
+  - Update the description
+- Copy the `file_train.yaml` API file and modify it to create `comp_method.yaml` as an example of a component config file
+  - Remove the `label` `obs` field
+  - Update the description
