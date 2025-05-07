@@ -11,12 +11,12 @@ The `proof-of-concept.py` script contains a minimal label projection task.
 This is the base that we we want to turn into proper components connected by a workflow.
 Show the script and output to demonstrate what we want to do.
 
-## Update the task `_viash.yaml` config file
+## 1. Update the task `_viash.yaml` config file
 
 - Briefly explain and fill in the sections of the file
 - Skip the test resources as this has already be configured to be the minimum needed for the example
 
-## Complete API files
+## 2. Complete API files
 
 - Copy the `comp_control_method.yaml` API file and modify it to create `comp_method.yaml` as an example of a component config file
   - Remove the `--input-solution` argument
@@ -24,3 +24,19 @@ Show the script and output to demonstrate what we want to do.
 - Copy the `file_train.yaml` API file and modify it to create `comp_method.yaml` as an example of a component config file
   - Remove the `label` `obs` field
   - Update the description
+
+## 3. Build the README
+
+- Sync the test resource with `./script/sync_resources.sh`
+- Build the `README` with `./common/scripts/create_task_readme`
+- Show the `README` and explain the sections
+
+## 4. Add a control method
+
+- Run `./common/scripts/create_component -h` to show the options
+- Run `./common/scripts/create_component --type control_method --name random_labels --language r`
+  - This doesn't have to use R but it's the easiest example to transfer to another language
+- Fill in the config file
+- Fill in the script file
+- Test the new component with `viash test src/control_methods/random_labels/config.vsh.yaml`
+  - It can be good to deliberately introduce a minor error here to demonstrate and failed test and how fix it
