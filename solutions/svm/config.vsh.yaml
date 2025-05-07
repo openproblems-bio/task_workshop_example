@@ -15,6 +15,12 @@ links:
 info:
   preferred_normalization: log_cp10k
 
+arguments:
+  - name: "--kernel"
+    type: "string"
+    default: "rbf"
+    description: The kernel type to use
+
 resources:
   - type: python_script
     path: script.py

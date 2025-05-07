@@ -4,11 +4,12 @@ import sklearn.svm
 ## VIASH START
 par = {
   "input_train": "resources_test/task_template/train.h5ad",
-  'input_test': 'resources_test/task_template/test.h5ad',
-  'output': 'output.h5ad'
+  "input_test": "resources_test/task_template/test.h5ad",
+  "output": "output.h5ad",
+  "kernel": "rbf"
 }
 meta = {
-  'name': 'svm'
+  "name": "svm"
 }
 ## VIASH END
 
@@ -21,7 +22,7 @@ input_test = ad.read_h5ad(par['input_test'])
 print(input_test, flush=True)
 
 print("Training SVM model...", flush=True)
-classifier = sklearn.svm.SVC()
+classifier = sklearn.svm.SVC(kernel=par["kernel"])
 classifier.fit(input_train.obsm["X_pca"], input_train.obs["label"].astype(str))
 
 print("Predicting labels for test data...", flush=True)

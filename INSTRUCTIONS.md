@@ -49,6 +49,7 @@ Show the script and output to demonstrate what we want to do.
   - Add `scikit-learn` as dependency to add to Docker
 - Fill in the script file
   - Copy in the code from the proof of concept and show how it can be adapted to a component
+- This example can be made more complex by adding an argument to set the kernel to use
 
 ## 6. Add a metric
 
