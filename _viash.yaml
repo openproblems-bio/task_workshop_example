@@ -45,7 +45,7 @@ references:
   #     }
 
 info:
-  image: The name of the image file to use for the component on the website.
+  image: thumbnail.svg
   test_resources:
     - type: s3
       path: s3://openproblems-data/resources_test/common/cxg_mouse_pancreas_atlas/
