@@ -4,7 +4,7 @@ import anndata as ad
 # DATA LOADER ------------------------------------------------------------------
 
 print("Loading data...")
-adata = ad.read_h5ad("resources_test/common/cxg_immune_cell_atlas/dataset.h5ad")
+adata = ad.read_h5ad("resources_test/common/cxg_mouse_pancreas_atlas//dataset.h5ad")
 print(adata)
 
 # DATA PROCESSOR ---------------------------------------------------------------
