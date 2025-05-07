@@ -1,0 +1,51 @@
+__merge__: ../../api/comp_metric.yaml
+
+name: f1
+info:
+  metrics:
+    - name: f1_macro
+      label: F1 (Macro)
+      summary: The macro-averaged F1 score
+      description: |
+        The F1 score, also known as balanced F-score or F-measure. It is the
+        harmonic mean of precision and recall. The version uses macro averaging.
+      references:
+        doi: 10.48550/arxiv.2008.05756
+      links:
+        documentation: https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html
+        repository: https://github.com/scikit-learn/scikit-learn
+      min: 0
+      max: 1
+      maximize: true
+    - name: f1_weighted
+      label: F1 (Weighted)
+      summary: The weighted F1 score
+      description: |
+        The F1 score, also known as balanced F-score or F-measure. It is the
+        harmonic mean of precision and recall. This version uses weighted
+        averaging.
+      references:
+        doi: 10.48550/arxiv.2008.05756
+      links:
+        documentation: https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html
+        repository: https://github.com/scikit-learn/scikit-learn
+      min: 0
+      max: 1
+      maximize: true
+
+resources:
+  - type: python_script
+    path: script.py
+
+engines:
+  - type: docker
+    image: openproblems/base_python:1.0.0
+    setup:
+      - type: python
+        packages: scikit-learn
+
+runners:
+  - type: executable
+  - type: nextflow
+    directives:
+      label: [midtime, midmem, midcpu]

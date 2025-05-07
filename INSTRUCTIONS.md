@@ -50,6 +50,14 @@ Show the script and output to demonstrate what we want to do.
 - Fill in the script file
   - Copy in the code from the proof of concept and show how it can be adapted to a component
 
+## 6. Add a metric
+
+- Run `./common/scripts/create_component --type metric --name f1 --language python`
+- Fill in the config file
+  - This is structured differently because one metric component can output multiple scores
+- Fill in the script
+- This example can be made more complex by adding a second F1 score with a different averaging method
+
 ## Things that aren't covered
 
 - Creating a data processor
