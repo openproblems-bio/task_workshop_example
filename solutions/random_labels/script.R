@@ -2,9 +2,9 @@ library(anndata)
 
 ## VIASH START
 par <- list(
-  input_train = "resources_test/.../train.h5ad",
-  input_test = "resources_test/.../test.h5ad",
-  input_solution = "resources_test/.../solution.h5ad",
+  input_train = "resources_test/task_template/train.h5ad",
+  input_test = "resources_test/task_template/test.h5ad",
+  input_solution = "resources_test/task_template/solution.h5ad",
   output = "output.h5ad"
 )
 meta <- list(

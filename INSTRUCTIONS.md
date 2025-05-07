@@ -40,3 +40,17 @@ Show the script and output to demonstrate what we want to do.
 - Fill in the script file
 - Test the new component with `viash test src/control_methods/random_labels/config.vsh.yaml`
   - It can be good to deliberately introduce a minor error here to demonstrate and failed test and how fix it
+
+## 5. Add a method
+
+- Run `./common/scripts/create_component --type method --name svm --language python`
+- Fill in the config file
+  - Point out the extra references, links fields
+  - Add `scikit-learn` as dependency to add to Docker
+- Fill in the script file
+  - Copy in the code from the proof of concept and show how it can be adapted to a component
+
+## Things that aren't covered
+
+- Creating a data processor
+- Creating test resources

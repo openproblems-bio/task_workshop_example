@@ -1,0 +1,33 @@
+__merge__: ../../api/comp_method.yaml
+
+name: svm
+label: SVM
+summary: Support Vector Machine
+description: |
+  Predict cell labels using a Support Vector Machine
+references:
+  doi:
+    - 10.1007/978-0-387-30162-4_415
+links:
+  documentation: https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html
+  repository: https://github.com/scikit-learn/scikit-learn
+
+info:
+  preferred_normalization: log_cp10k
+
+resources:
+  - type: python_script
+    path: script.py
+
+engines:
+  - type: docker
+    image: openproblems/base_python:1.0.0
+    setup:
+      - type: python
+        packages: scikit-learn
+
+runners:
+  - type: executable
+  - type: nextflow
+    directives:
+      label: [midtime, midmem, midcpu]
