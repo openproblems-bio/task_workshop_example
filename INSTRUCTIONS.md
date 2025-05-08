@@ -59,6 +59,12 @@ Show the script and output to demonstrate what we want to do.
 - Fill in the script
 - This example can be made more complex by adding a second F1 score with a different averaging method
 
+## Test the workflow
+
+- Build components using `scripts/project/build_all_docker_containers.sh`
+  - Inspect `target/` with `tree target -L 3`
+- Run test workflow with `./scripts/run_benchmark/run_test_local.sh`
+
 ## Things that aren't covered
 
 - Creating a data processor
