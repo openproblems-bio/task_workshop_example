@@ -59,13 +59,27 @@ Show the script and output to demonstrate what we want to do.
 - Fill in the script
 - This example can be made more complex by adding a second F1 score with a different averaging method
 
-## Test the workflow
+## 7. Test the workflow
 
-- Build components using `scripts/project/build_all_docker_containers.sh`
+- Build components using `./scripts/project/build_all_docker_containers.sh`
   - Inspect `target/` with `tree target -L 3`
 - Run test workflow with `./scripts/run_benchmark/run_test_local.sh`
+- Inspect results folder with `tree temp/results/testrun_*/ `
+  - Show metric scores in `temp_results/testrun_*/score_uns.yaml`
+
+# 8. Add new components to the workflow
+
+- Add dependencies to `run_benchmark/config.vsh.yaml`
+- Add components to `run_benchmark/main.nf`
+- Build components using `./scripts/project/build_all_docker_containers.sh`
+- Run test workflow with `./scripts/run_benchmark/run_test_local.sh`
+- Show new results
 
 ## Things that aren't covered
 
 - Creating a data processor
 - Creating test resources
+
+## TODO
+
+- Add checks from `accuracy` to `f1`
