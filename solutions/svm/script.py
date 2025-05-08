@@ -39,7 +39,9 @@ output = ad.AnnData(
     "method_id": meta["name"]
   }
 )
+output.obs_names = input_test.obs_names
 print(output, flush=True)
+
 output.write_h5ad(par["output"], compression="gzip")
 
 print("Done!", flush=True)
