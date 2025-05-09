@@ -1,0 +1,61 @@
+viash_version: 0.9.0
+
+name: task_workshop_example
+organization: openproblems-bio
+version: dev
+
+license: MIT
+keywords: [single-cell, openproblems, benchmark]
+links:
+  issue_tracker: https://github.com/openproblems-bio/task_workshop_example/issues
+  repository: https://github.com/openproblems-bio/task_workshop_example
+  docker_registry: ghcr.io
+
+label: Example Workshop Task
+summary: An example benchmark task used in workshops
+description: |
+  This example task is used to demonstrate how to build a new benchmark in a
+  workshop. It builds on the task template.
+
+# references:
+#   doi:
+#     - 10.21203/rs.3.rs-4181617/v1
+#   bibtex:
+#     - |
+#       @article{doe_2021_template,
+#         doi = {10.21203/rs.3.rs-4181617/v1},
+#         url = {https://doi.org/10.21203/rs.3.rs-4181617/v1},
+#         author = {Doe, John},
+#         title = {A template for creating new tasks},
+#         publisher = {Research Square},
+#         year = {2021},
+#       }
+
+info:
+  image: thumbnail.svg
+  test_resources:
+    - type: s3
+      path: s3://openproblems-data/resources_test/common/cxg_mouse_pancreas_atlas/
+      dest: resources_test/common/cxg_mouse_pancreas_atlas/
+    - type: s3
+      path: s3://openproblems-data/resources_test/task_template/
+      dest: resources_test/task_template
+
+authors:
+  - name: John Doe
+    roles: [ "author", "maintainer" ]
+    info:
+      github: johndoe
+      orcid: 0000-0000-0000-0000
+      email: john@doe.me
+      linkedin: johndoe
+
+config_mods: |
+  .runners[.type == "nextflow"].config.labels := { lowmem : "memory = 20.Gb", midmem : "memory = 50.Gb", highmem : "memory = 100.Gb", lowcpu : "cpus = 5", midcpu : "cpus = 15", highcpu : "cpus = 30", lowtime : "time = 1.h", midtime : "time = 4.h", hightime : "time = 8.h", veryhightime : "time = 24.h" }
+
+repositories:
+  - name: core
+    type: github
+    repo: openproblems-bio/core
+    tag: build/main
+    path: viash/core

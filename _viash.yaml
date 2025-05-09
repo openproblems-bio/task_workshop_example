@@ -15,7 +15,6 @@ links:
   repository: https://github.com/openproblems-bio/task_template
   docker_registry: ghcr.io
 
-
 # Step 4: Update the label, summary and description.
 # A unique, human-readable, short label. Used for creating summary tables and visualisations.
 label: Template
@@ -25,9 +24,9 @@ description: |
   to solve. Outline the input data types, the expected output, and any assumptions or constraints.
   Be sure to explain any terminology or concepts that are essential for understanding the task.
 
-  Explain the motivation behind your proposed task. Describe the biological or computational 
+  Explain the motivation behind your proposed task. Describe the biological or computational
   problem you aim to address and why it's important. Discuss the current state of research in
-  this area and any gaps or challenges that your task could help address. This section 
+  this area and any gaps or challenges that your task could help address. This section
   should convince readers of the significance and relevance of your task.
 
 # A list of references to relevant literature. Each reference should be a DOI or a bibtex entry
@@ -44,30 +43,29 @@ references:
   #       publisher = {Research Square},
   #       year = {2021},
   #     }
-  
+
 info:
-  image: The name of the image file to use for the component on the website.
-  # Step 5: Replace the task_template to the name of the task.
+  image: thumbnail.svg
   test_resources:
     - type: s3
-      path: s3://openproblems-data/resources_test/common/
-      dest: resources_test/common
+      path: s3://openproblems-data/resources_test/common/cxg_mouse_pancreas_atlas/
+      dest: resources_test/common/cxg_mouse_pancreas_atlas/
     - type: s3
       path: s3://openproblems-data/resources_test/task_template/
       dest: resources_test/task_template
 
 # Step 6: Update the authors of the task.
-authors: 
+authors:
   # Full name of the author, usually in the name of FirstName MiddleName LastName.
   - name: John Doe
     # Role of the author. Possible values:
-    # 
+    #
     # * `"author"`: Authors who have made substantial contributions to the component.
     # * `"maintainer"`: The maintainer of the component.
     # * `"contributor"`: Authors who have made smaller contributions (such as code patches etc.).
     roles: [ "author", "maintainer" ]
     # Additional information on the author
-    info: 
+    info:
       github: johndoe
       orcid: 0000-0000-0000-0000
       email: john@doe.me
