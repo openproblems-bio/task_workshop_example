@@ -56,8 +56,9 @@ Show the script and output to demonstrate what we want to do.
 - Run `./common/scripts/create_component --type metric --name f1 --language python`
 - Fill in the config file
   - This is structured differently because one metric component can output multiple scores
-- Fill in the script
-- This example can be made more complex by adding a second F1 score with a different averaging method
+- Fill in the script with content from the proof of concept
+- (Optional) Copy the checks and assertions from the accuracy metric
+- (Optional) Add a second F1 score with a different averaging method
 
 ## 7. Test the workflow
 
@@ -67,13 +68,25 @@ Show the script and output to demonstrate what we want to do.
 - Inspect results folder with `tree temp/results/testrun_*/ `
   - Show metric scores in `temp_results/testrun_*/score_uns.yaml`
 
-# 8. Add new components to the workflow
+## 8. Add new components to the workflow
 
 - Add dependencies to `run_benchmark/config.vsh.yaml`
 - Add components to `run_benchmark/main.nf`
 - Build components using `./scripts/project/build_all_docker_containers.sh`
 - Run test workflow with `./scripts/run_benchmark/run_test_local.sh`
 - Show new results
+
+## Extensions
+
+- If there is still time the participants can try to add more components:
+- Suggestions:
+  - Methods
+  - Metrics
+- Use the script to create a new component
+- Complete the component
+- Test the component
+- Add the component to the workflow
+- Run the test workflow
 
 ## Things that aren't covered
 

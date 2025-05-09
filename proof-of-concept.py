@@ -84,7 +84,6 @@ for method, obs_label_pred in predictions.items():
         test_adata.obs["cell_type"],
         obs_label_pred,
         average="macro",
-        labels=test_adata.obs["cell_type"].cat.categories,
     )
     metric_scores[method]["f1"] = f1
 
