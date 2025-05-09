@@ -79,9 +79,9 @@ Show the script and output to demonstrate what we want to do.
 ## Extensions
 
 - If there is still time the participants can try to add more components:
-- Suggestions:
-  - Methods
-  - Metrics
+- Suggestions
+  - Methods: https://scikit-learn.org/stable/supervised_learning.html
+  - Metrics: https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics
 - Use the script to create a new component
 - Complete the component
 - Test the component
@@ -92,7 +92,3 @@ Show the script and output to demonstrate what we want to do.
 
 - Creating a data processor
 - Creating test resources
-
-## TODO
-
-- Add checks from `accuracy` to `f1`
