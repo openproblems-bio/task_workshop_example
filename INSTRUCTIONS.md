@@ -11,6 +11,8 @@ The `proof-of-concept.py` script contains a minimal label projection task.
 This is the base that we we want to turn into proper components connected by a workflow.
 Show the script and output to demonstrate what we want to do.
 
+The test resources will need to be synced for this to work.
+
 ## 1. Update the task `_viash.yaml` config file
 
 - Briefly explain and fill in the sections of the file
@@ -21,7 +23,7 @@ Show the script and output to demonstrate what we want to do.
 - Copy the `comp_control_method.yaml` API file and modify it to create `comp_method.yaml` as an example of a component config file
   - Remove the `--input-solution` argument
   - Update the description
-- Copy the `file_train.yaml` API file and modify it to create `comp_method.yaml` as an example of a component config file
+- Copy the `file_train.yaml` API file and modify it to create `file_test.yaml` as an example of a component config file
   - Remove the `label` `obs` field
   - Update the description
 
@@ -39,7 +41,7 @@ Show the script and output to demonstrate what we want to do.
 - Fill in the config file
 - Fill in the script file
 - Test the new component with `viash test src/control_methods/random_labels/config.vsh.yaml`
-  - It can be good to deliberately introduce a minor error here to demonstrate and failed test and how fix it
+  - It can be good to deliberately introduce a minor error here to demonstrate a failed test and how fix it
 
 ## 5. Add a method
 
@@ -49,6 +51,7 @@ Show the script and output to demonstrate what we want to do.
   - Add `scikit-learn` as dependency to add to Docker
 - Fill in the script file
   - Copy in the code from the proof of concept and show how it can be adapted to a component
+- Test the component with `viash test src/methods/svm/config.vsh.yaml`
 - This example can be made more complex by adding an argument to set the kernel to use
 
 ## 6. Add a metric
@@ -57,6 +60,7 @@ Show the script and output to demonstrate what we want to do.
 - Fill in the config file
   - This is structured differently because one metric component can output multiple scores
 - Fill in the script with content from the proof of concept
+- Test the component with `viash test src/metrics/f1/config.vsh.yaml`
 - (Optional) Copy the checks and assertions from the accuracy metric
 - (Optional) Add a second F1 score with a different averaging method
 
@@ -66,7 +70,7 @@ Show the script and output to demonstrate what we want to do.
   - Inspect `target/` with `tree target -L 3`
 - Run test workflow with `./scripts/run_benchmark/run_test_local.sh`
 - Inspect results folder with `tree temp/results/testrun_*/ `
-  - Show metric scores in `temp_results/testrun_*/score_uns.yaml`
+  - Show metric scores in `temp/results/testrun_*/score_uns.yaml`
 
 ## 8. Add new components to the workflow
 
@@ -80,7 +84,9 @@ Show the script and output to demonstrate what we want to do.
 
 - If there is still time the participants can try to add more components:
 - Suggestions
-  - Methods: https://scikit-learn.org/stable/supervised_learning.html
+  - Methods
+    - https://scikit-learn.org/stable/supervised_learning.html
+    - https://github.com/openproblems-bio/task_label_projection/tree/main/src/methods
   - Metrics: https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics
 - Use the script to create a new component
 - Complete the component
